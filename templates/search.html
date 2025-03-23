@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Search Results for "{{ query }}"</h2>
+    {% if results %}
+        <ul>
+            {% for todo in results %}
+                <li><strong>{{ todo.title }}</strong>: {{ todo.desc }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matching tasks found.</p>
+    {% endif %}
+    <a href="/">Go back</a>
+{% endblock %}
